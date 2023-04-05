@@ -4,6 +4,7 @@
     <h1>My Cart</h1>
   </header>
 
+  <% if (cart_subtotal_cents > 0) %>
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -48,5 +49,10 @@
       <% end %>
     </div>
   </div>
-
+<% else %>
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>Your cart is EMPTY!</strong> Go fill in your favorite plants.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+<% end %>
 </section>
