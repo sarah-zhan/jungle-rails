@@ -4,6 +4,11 @@ class ApplicationController < ActionController::Base
   
   protect_from_forgery with: :exception
 
+  def index
+    flash[:notice] = "Logged in sucessfully"
+    flash[:alert] = "Invalid email or password"
+  end
+
   private
 
   def cart
