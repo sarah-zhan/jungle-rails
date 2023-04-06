@@ -1,2 +1,8 @@
-<h1>Admin::Dashboard#show</h1>
-<p>Find me in app/views/admin/dashboard/show.html.erb</p>
+<div class="jumbotron">
+  <h3 class="display-4">Jungle Summary</h3>
+  <br>
+  <h4 class="lead">We have a total of <%= @num_product %> products.</h4>
+  <h4 class="lead">We have <%= @num_category %> categories.</h4>
+  <hr class="my-4">
+  <%= link_to "Back to the store" , root_path, class: 'btn btn-lg btn-success' %>
+</div>
