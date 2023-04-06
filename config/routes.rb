@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    get "/categories", to: "categoriess#index"
+    get "admin/categories", to: "categoriess#index"
     resources :categories, except: [:delete]
   end
 
