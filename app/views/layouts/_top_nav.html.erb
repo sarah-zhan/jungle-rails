@@ -17,7 +17,6 @@
         <li class="nav-item">
           <%= link_to 'About Us' , :about, class: "nav-link" %>
         </li>
-
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle " href="#" id="navbarDropdownAdmin" role="button" data-bs-toggle="dropdown"
             aria-expanded="false">
@@ -57,23 +56,20 @@
               <%= Current.user.email %>
                 <%= button_to "Logout" , logout_path, method: :delete, class: "text-white btn btn-outline-light ms-4" %>
             </li>
-            <% else %>
-              <li class="nav-item">
+          <% else %>
+              <li class="nav-item nav-link">
                 <% link_to "Sign Up" , sign_up_path, class: "text-white btn btn-outline-light ms-4" %>
               </li>
-              <li class="nav-item">
+              <li class="nav-item nav-link">
                 <% link_to "Log in" , sign_in_path, class: "text-white btn btn-outline-light ms-4" %>
               </li>
-              <% end %>
+          <% end %>
         </ul>
-        </li>
-
-
-
-
+         
     </div>
   </div>
 </nav>
+
 <script>
   (function () {
     const gnr = () => {
