@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :show]
   resources :categories, only: [:show]
 
+  get "sign_up", to: "registrations#new"
+  post "sign_up", to: "registrations#create"
+
   resource :cart, only: [:show] do
     post :add_item
     post :remove_item
