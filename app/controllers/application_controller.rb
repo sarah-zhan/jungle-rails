@@ -9,9 +9,6 @@ class ApplicationController < ActionController::Base
     if session[:user_id]
       Current.user = User.find_by(id: session[:user_id])
     end
-
-    flash[:notice] = "Logged in sucessfully"
-    flash[:alert] = "Invalid email or password"
   end
 
   private
