@@ -19,12 +19,8 @@
     <div class="container">
       <%= render 'layouts/flash' %>
     </div>
-    <% if @user %>
-      <div class="text-center alert alert-success">logged in as: <%= @user.first_name %>
-        <%= button_to "Logout", logout_path, method: :delete %>
-      </div>
-    <% end %>
-        <main class="container">
+    
+        <main class="container">      
           <%= yield %>
         </main>
 

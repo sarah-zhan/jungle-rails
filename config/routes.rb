@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   get "sign_up", to: "registrations#new"
   post "sign_up", to: "registrations#create"
 
-  get "sign_in", to: "session#new"
-  post "sign_in", to: "session#create"
-  
+  get "sign_in", to: "sessions#new"
+  post "sign_in", to: "sessions#create"
+
   delete "logout", to: "sessions#destroy"
 
   resource :cart, only: [:show] do
