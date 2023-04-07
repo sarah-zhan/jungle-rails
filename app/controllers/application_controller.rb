@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def index
+    if session[:user_id]
+      @user = User.find_by(session[:user_id])
+    end
+    
     flash[:notice] = "Logged in sucessfully"
     flash[:alert] = "Invalid email or password"
   end
