@@ -3,11 +3,13 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   describe 'validations' do
     it 'returns false password and password_confirmation fields not match' do
-      user = User.new(password: 'password', password_confirmation: 'password2')
+      user = User.new(first_name: 'sarah', last_name: 'Kay', email: '123@123.com', password: 'password',
+                      password_confirmation: 'password2')
       expect(user.valid?).to eq(false)
     end
-    xit 'returns true password and password_confirmation fields match' do
-      user = User.new(password: 'password2', password_confirmation: 'password2')
+    it 'returns true password and password_confirmation fields match' do
+      user = User.new(first_name: 'sarah', last_name: 'Kay', email: '123@123.com', password: 'password2',
+                      password_confirmation: 'password2')
       expect(user.valid?).to eq(true)
     end
     it 'Emails must be unique' do

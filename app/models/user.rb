@@ -8,7 +8,7 @@
 # create user class
 class User < ApplicationRecord
   has_secure_password
-  before_validation { self.email = email.downcase }
+  before_validation { self.email = email.downcase if email }
   validates :email, presence: true,
                     uniqueness: { case_sensitive: false },
                     format: { with: /\A[^@\s]+@[^@\s]+\z/, message: 'must be a valid email address' }
