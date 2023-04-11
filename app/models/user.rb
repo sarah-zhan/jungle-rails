@@ -8,8 +8,13 @@
 # create user class
 class User < ApplicationRecord
   has_secure_password
-  validates :email, format: { with: /\A[^@\s]+@[^@\s]+\z/, message: 'must be a valid email address' }, presence: true, uniqueness: true
+  before_validation { self.email = email.downcase }
+  validates :email, presence: true,
+                    uniqueness: { case_sensitive: false },
+                    format: { with: /\A\s*[^@\s]+@[^@\s]+\s*\z/i, message: 'must be a valid email address' }
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :password_digest, presence: true, length: { minimum: 8, message: 'must be at least 8 characters' }
+  validates :password, presence: true,
+                       length: { minimum: 8, message: 'must be at least 8 characters' },
+                       confirmation: true
 end
