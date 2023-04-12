@@ -1,4 +1,4 @@
-describe('add to cart', () => {
+describe('Sign Up', () => {
   beforeEach(() => {
     cy.visit('/');
   });
@@ -12,14 +12,13 @@ describe('add to cart', () => {
     cy.get('.products article').should('have.length', 2);
   });
 
-  it('go to category Evergreen', () => {
-    cy.get('.me-auto > .dropdown > #navbarDropdownAdmin').click();
+  it('goes to sign up page', () => {
+    cy.get('.navbar-nav > :nth-child(1) > .btn').click();
+    cy.get('main.container');
   });
 
-  it('add Scented Blade to the cart and 1 in the cart', () => {
-    cy.get('.button_to > .btn').contains('Add').click();
-    cy.contains('1');
+  it('fill in first name', () => {
+    cy.get('#user_first_name');
   });
-
 
 });

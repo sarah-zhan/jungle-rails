@@ -40,6 +40,6 @@ end
 
 private
 
-def open_asset(seeds)
-  File.open(Rails.root.join('db', 'seed_assets', seeds))
+def open_asset(file_name)
+  File.open(Rails.root.join('db', 'seed_assets', file_name))
 end
